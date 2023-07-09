@@ -10,7 +10,7 @@ def homepage():
 
 @app.route('/loan_status',methods=['POST'])
 def predict_loan_status():
-    data = request.forms
+    data = request.form
 
     print('Data :',data)
 
