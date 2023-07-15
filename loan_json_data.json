@@ -1,1 +1,0 @@
-{"gender": {"Male": 1, "Female": 0}, "married": {"Yes": 1, "No": 0}, "dependant": {"0": 0, "1": 1, "2": 2, "3+": 3}, "education": {"Graduate": 1, "Not Graduate": 0}, "sel_employed": {"No": 1, "Yes": 0}, "property_area": {"Semiurban": 1, "Urban": 2, "Rural": 0}}
