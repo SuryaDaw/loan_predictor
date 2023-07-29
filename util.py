@@ -28,7 +28,7 @@ class LoanPredictor():
         Self_Employed = self.json_data['sel_employed'][Self_Employed]
         Property_Area = self.json_data['property_area'][Property_Area]
 
-        Gender, Married,Dependents, Education, Self_Employed, ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term, Credit_History, Property_Area = self.scaler.fit_transform([[Gender, Married,Dependents, Education, Self_Employed, ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term, Credit_History, Property_Area]])
+        Gender, Married,Dependents, Education, Self_Employed, ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term, Credit_History, Property_Area = self.scaler.fit_transform([[Gender, Married,Dependents, Education, Self_Employed, ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term, Credit_History, Property_Area]])[0]
 
         test_array = np.zeros([1,self.model.n_features_in_])
         test_array[0][0] = Gender
