@@ -10,6 +10,9 @@ class LoanPredictor():
     def get_data(self):
         with open(config.MODEL_FILE_PATH,'rb') as f:
             self.model = pickle.load(f)
+        
+        with open(config.SCALER_FILE_PATH,'rb') as f:
+            self.scaler = pickle.load(f)
 
         with open(config.JSON_FILE_PATH,'r') as f:
             self.json_data = json.load(f)
@@ -24,6 +27,8 @@ class LoanPredictor():
         Education = self.json_data['education'][Education]
         Self_Employed = self.json_data['sel_employed'][Self_Employed]
         Property_Area = self.json_data['property_area'][Property_Area]
+
+        Gender, Married,Dependents, Education, Self_Employed, ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term, Credit_History, Property_Area = self.scaler.fit_transform([[Gender, Married,Dependents, Education, Self_Employed, ApplicantIncome,CoapplicantIncome,LoanAmount,Loan_Amount_Term, Credit_History, Property_Area]])
 
         test_array = np.zeros([1,self.model.n_features_in_])
         test_array[0][0] = Gender
